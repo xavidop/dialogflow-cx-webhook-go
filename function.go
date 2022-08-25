@@ -12,22 +12,15 @@ import (
 	"google.golang.org/protobuf/types/known/structpb"
 )
 
-// webhookRequest is used to unmarshal a WebhookRequest JSON object. Note that
-// not all members need to be defined--just those that you need to process.
-// As an alternative, you could use the types provided by the Dialogflow protocol buffers:
-// https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/dialogflow/cx/v3#WebhookRequest
-
 // webhookResponse handles webhook calls.
 func webhookResponse(request cx.WebhookRequest) (cx.WebhookResponse, error) {
 
-	// Create session parameters that are populated in the response.
-	// The "cancel-period" parameter is referenced by the agent.
-	// This example hard codes the value 2, but a real system
-	// might look up this value in a database.
+	// Create session parameters that are populated in the response as an example.
 	p := map[string]*structpb.Value{
 		"key": {Kind: &structpb.Value_StringValue{StringValue: "value"}},
 	}
 
+	// Example reply from webhook
 	messages := []*cx.ResponseMessage{
 		{
 			Message: &cx.ResponseMessage_Text_{
@@ -76,6 +69,7 @@ func HandleWebhookRequest(w http.ResponseWriter, r *http.Request) {
 		DiscardUnknown: true,
 	}
 
+	// Unmarshal from the protobuf struct
 	if err = unmarshal.Unmarshal(body, &request); err != nil {
 		handleError(w, err)
 		return
@@ -96,7 +90,7 @@ func HandleWebhookRequest(w http.ResponseWriter, r *http.Request) {
 		AllowPartial: true,
 	}
 
-	// Send response
+	// Marshal from the protobuf struct
 	bytes, err := marshal.Marshal(&response)
 	if err != nil {
 		handleError(w, err)
