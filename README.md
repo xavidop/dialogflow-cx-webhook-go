@@ -38,7 +38,7 @@ Here you have the technologies used in this project
 2. Dialogflow API enabled - [How to enable it](https://cloud.google.com/dialogflow/cx/docs/reference)
 3. gcloud CLI - [Install and configure gcloud CLI](https://cloud.google.com/sdk/docs/install)
 4. Dialogflow CX CLI - [Install and configure Dialogflow CX CLI](https://cxcli.xavidop.me/)
-5. Node.js v10.x
+5. Golang v1.19 or higher
 6. Visual Studio Code
 7. Dialogflow CX for Golang (Version >=1.23.0)
 8. ngrok
