@@ -139,7 +139,7 @@ func HandleWebhookRequest(w http.ResponseWriter, r *http.Request) {
 }
 
 ```
-It is important to notice here that to have a better development experience, we are using `protobuf` structs from the Dialogflow CX SDK. This is why we are marshaling and unmarshaling using the `protojson` library.
+It is important to notice here that to have a better development experience, we are using `protobuf` structs from the Dialogflow CX SDK. This is why we are marshalling and unmarshalling using the `protojson` library.
 
 ## Deploying your Dialogflow CX Webhook
 
