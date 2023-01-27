@@ -11,8 +11,8 @@
   - [Local](#local)
     - [Building the Dialoglfow CX Webhook](#building-the-dialoglfow-cx-webhook)
     - [Running the Dialogflow CX Webhook](#running-the-dialogflow-cx-webhook)
-    - [Debugging the Dialogflow CX webhook](#debugging-the-dialogflow-cx-webhook)
     - [Testing requests locally](#testing-requests-locally)
+    - [Debugging the Dialogflow CX webhook](#debugging-the-dialogflow-cx-webhook)
   - [Hybrid](#hybrid)
     - [Port-forwarding requests directly from Dialogflow CX Console to your laptop](#port-forwarding-requests-directly-from-dialogflow-cx-console-to-your-laptop)
   - [Resources](#resources)
@@ -263,12 +263,6 @@ After configuring our launch.json file and understanding how the local debugger 
 
 After executing it, you can send Dialogflow CX POST requests to http://localhost:8080.
 
-### Debugging the Dialogflow CX webhook
-
-Following the steps before, now you can set up breakpoints wherever you want inside all Golang files in order to debug your webhook:
-
-![image](img/debug.png)
-
 ### Testing requests locally
 
 I'm sure you already know the famous tool called [Postman](https://www.postman.com/). REST APIs have become the new standard in providing a public and secure interface for your service. Though REST has become ubiquitous, it's not always easy to test. Postman, makes it easier to test and manage HTTP REST APIs. Postman gives us multiple features to import, test and share APIs, which will help you and your team be more productive in the long run.
@@ -336,6 +330,12 @@ The response from this example webhook is gonna be this one:
   }
 }
 ```
+
+### Debugging the Dialogflow CX webhook
+
+Following the steps before, now you can set up breakpoints wherever you want inside all Golang files in order to debug your webhook:
+
+![image](img/debug.png)
 
 ## Hybrid
 ### Port-forwarding requests directly from Dialogflow CX Console to your laptop
