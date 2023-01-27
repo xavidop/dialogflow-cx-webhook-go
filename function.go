@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 
-	cx "google.golang.org/genproto/googleapis/cloud/dialogflow/cx/v3beta1"
+	cx "cloud.google.com/go/dialogflow/cx/apiv3beta1/cxpb"
 	"google.golang.org/protobuf/encoding/protojson"
 	"google.golang.org/protobuf/types/known/structpb"
 )
