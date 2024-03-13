@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	cloud.google.com/go/dialogflow v1.32.0
-	google.golang.org/protobuf v1.30.0
+	google.golang.org/protobuf v1.33.0
 )
 
 require (
